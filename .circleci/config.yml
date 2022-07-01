@@ -118,6 +118,7 @@ jobs:
            # npm audit fix --force was used in the script as 8 criticial vulnerabilty was found after running npm audit fix
           command: |
             npm i
+            npm update
             npm audit fix --force
             npm audit --audit-level=critical
 

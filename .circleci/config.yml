@@ -118,9 +118,6 @@ jobs:
            # npm audit fix --force was used in the script as 8 criticial vulnerabilty was found after running npm audit fix
           command: |
             npm i
-            npm install class-validator@latest --force
-            npm install @nestjs/platform-express@latest
-            npm install nodemon@latest --save-dev
             npm audit fix --force
             npm install typeorm@latest --force
             npm audit --audit-level=critical

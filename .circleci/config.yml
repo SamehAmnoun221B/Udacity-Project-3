@@ -267,7 +267,6 @@ jobs:
             cat frontend/.env
       - run:
           name: Deploy frontend objects
-          working_directory: ./frontend
           command: |
             cd frontend
             npm run build

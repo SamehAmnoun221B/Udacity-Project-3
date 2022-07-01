@@ -209,10 +209,10 @@ jobs:
             if grep -q "has been done successfully" ./migration_status.txt
             then
               echo "has been done successfully"
-              curl https://kvdb.io/W8RGQYpKFxKucw5ACfRRrE/migration_$\{CIRCLE_WORKFLOW_ID:0:7\} -d '1'
+              curl https://kvdb.io/W8RGQYpKFxKucw5ACfRRrE/migration_${CIRCLE_WORKFLOW_ID:0:7} -d '1'
             else
               echo "has failed"
-              curl https://kvdb.io/W8RGQYpKFxKucw5ACfRRrE/migration_$\{CIRCLE_WORKFLOW_ID:0:7\} -d '0'
+              curl https://kvdb.io/W8RGQYpKFxKucw5ACfRRrE/migration_${CIRCLE_WORKFLOW_ID:0:7} -d '0'
             fi
       - destroy-environment:
           workflow_id: ${CIRCLE_WORKFLOW_ID:0:7}
@@ -269,3 +269,6 @@ workflows:
           requires: [deploy-infrastructure]
       - run-migrations:
           requires: [configure-infrastructure]
+      - deploy-frontend:
+          requires:
+            - run-migrations

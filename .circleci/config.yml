@@ -112,6 +112,7 @@ jobs:
             npm audit fix --force
             npm install typeorm@latest --force
             npm audit --audit-level=critical
+  # Wrong key pair in backend.yml was used to make the job fail
   deploy-infrastructure:
     docker:
       - image: amazon/aws-cli

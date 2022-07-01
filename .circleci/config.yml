@@ -100,8 +100,10 @@ jobs:
       - run:
           name: Front-end scan
           working_directory: ./frontend
+          # npm audit fix --force was used in the script as 1 criticial vulnerabilty was found after running npm audit fix
           command: |
             npm i
+            npm audit fix --audit-level=critical --force
             npm audit --audit-level=critical
   scan-backend:
     docker:
@@ -113,8 +115,10 @@ jobs:
       - run:
           name: Back-end scan
           working_directory: ./backend
+          # npm audit fix --force was used in the script as 8 criticial vulnerabilty was found after running npm audit fix
           command: |
             npm i
+            npm audit fix --audit-level=critical --force
             npm audit --audit-level=critical
 
 workflows:

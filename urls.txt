@@ -1,6 +1,11 @@
+URL 1: Github
 https://github.com/SamehAmnoun221B/Udacity-Project-3
+URL 2: S3
 http://udapeople-e559bb6.s3-website-us-east-1.amazonaws.com/#/employees
+URL 3: Cloudfront
 http://dke2w9y7s02s4.cloudfront.net
+URL 4: Backend (EC2)
 http://ec2-3-86-202-152.compute-1.amazonaws.com:3030/api/status
+URL 5: Prometheus Server
 http://ec2-54-145-181-89.compute-1.amazonaws.com:9090/targets
 
